@@ -2,8 +2,7 @@
 //  Torrent.h
 //  Torrent
 //
-//  Created by Bryant Luk on 7/27/14.
-//  Copyright (c) 2014 OOB. All rights reserved.
+//  Copyright (c) 2014 Bryant Luk. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

@@ -10,10 +10,18 @@
 		35FDEE6519859AE300C37951 /* Torrent.h in Headers */ = {isa = PBXBuildFile; fileRef = 35FDEE6419859AE300C37951 /* Torrent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35FDEE6B19859AE300C37951 /* Torrent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FDEE5F19859AE300C37951 /* Torrent.framework */; };
 		35FDEE7219859AE300C37951 /* TorrentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE7119859AE300C37951 /* TorrentTests.swift */; };
+		35FDEE7C19859F0B00C37951 /* Bencode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE7B19859F0B00C37951 /* Bencode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		35FDEE6C19859AE300C37951 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35FDEE5619859AE300C37951 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35FDEE5E19859AE300C37951;
+			remoteInfo = Torrent;
+		};
+		35FDEE7D1985A9F800C37951 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 35FDEE5619859AE300C37951 /* Project object */;
 			proxyType = 1;
@@ -29,6 +37,7 @@
 		35FDEE6A19859AE300C37951 /* TorrentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TorrentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35FDEE7019859AE300C37951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35FDEE7119859AE300C37951 /* TorrentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentTests.swift; sourceTree = "<group>"; };
+		35FDEE7B19859F0B00C37951 /* Bencode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bencode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +82,7 @@
 			children = (
 				35FDEE6419859AE300C37951 /* Torrent.h */,
 				35FDEE6219859AE300C37951 /* Supporting Files */,
+				35FDEE7B19859F0B00C37951 /* Bencode.swift */,
 			);
 			path = Torrent;
 			sourceTree = "<group>";
@@ -146,6 +156,7 @@
 			);
 			dependencies = (
 				35FDEE6D19859AE300C37951 /* PBXTargetDependency */,
+				35FDEE7E1985A9F800C37951 /* PBXTargetDependency */,
 			);
 			name = TorrentTests;
 			productName = TorrentTests;
@@ -210,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35FDEE7C19859F0B00C37951 /* Bencode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +240,11 @@
 			isa = PBXTargetDependency;
 			target = 35FDEE5E19859AE300C37951 /* Torrent */;
 			targetProxy = 35FDEE6C19859AE300C37951 /* PBXContainerItemProxy */;
+		};
+		35FDEE7E1985A9F800C37951 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35FDEE5E19859AE300C37951 /* Torrent */;
+			targetProxy = 35FDEE7D1985A9F800C37951 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -316,6 +333,7 @@
 		35FDEE7619859AE300C37951 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -327,12 +345,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		35FDEE7719859AE300C37951 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
