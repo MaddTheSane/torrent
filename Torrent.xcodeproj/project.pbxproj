@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35FDEE6519859AE300C37951 /* Torrent.h in Headers */ = {isa = PBXBuildFile; fileRef = 35FDEE6419859AE300C37951 /* Torrent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		35FDEE6B19859AE300C37951 /* Torrent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FDEE5F19859AE300C37951 /* Torrent.framework */; };
+		35FDEE7219859AE300C37951 /* TorrentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE7119859AE300C37951 /* TorrentTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		35FDEE6C19859AE300C37951 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35FDEE5619859AE300C37951 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35FDEE5E19859AE300C37951;
+			remoteInfo = Torrent;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		35FDEE5F19859AE300C37951 /* Torrent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Torrent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35FDEE6319859AE300C37951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35FDEE6419859AE300C37951 /* Torrent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Torrent.h; sourceTree = "<group>"; };
+		35FDEE6A19859AE300C37951 /* TorrentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TorrentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		35FDEE7019859AE300C37951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35FDEE7119859AE300C37951 /* TorrentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35FDEE5B19859AE300C37951 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35FDEE6719859AE300C37951 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FDEE6B19859AE300C37951 /* Torrent.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		35FDEE5519859AE300C37951 = {
+			isa = PBXGroup;
+			children = (
+				35FDEE6119859AE300C37951 /* Torrent */,
+				35FDEE6E19859AE300C37951 /* TorrentTests */,
+				35FDEE6019859AE300C37951 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		35FDEE6019859AE300C37951 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35FDEE5F19859AE300C37951 /* Torrent.framework */,
+				35FDEE6A19859AE300C37951 /* TorrentTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		35FDEE6119859AE300C37951 /* Torrent */ = {
+			isa = PBXGroup;
+			children = (
+				35FDEE6419859AE300C37951 /* Torrent.h */,
+				35FDEE6219859AE300C37951 /* Supporting Files */,
+			);
+			path = Torrent;
+			sourceTree = "<group>";
+		};
+		35FDEE6219859AE300C37951 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35FDEE6319859AE300C37951 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		35FDEE6E19859AE300C37951 /* TorrentTests */ = {
+			isa = PBXGroup;
+			children = (
+				35FDEE7119859AE300C37951 /* TorrentTests.swift */,
+				35FDEE6F19859AE300C37951 /* Supporting Files */,
+			);
+			path = TorrentTests;
+			sourceTree = "<group>";
+		};
+		35FDEE6F19859AE300C37951 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35FDEE7019859AE300C37951 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		35FDEE5C19859AE300C37951 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FDEE6519859AE300C37951 /* Torrent.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		35FDEE5E19859AE300C37951 /* Torrent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35FDEE7519859AE300C37951 /* Build configuration list for PBXNativeTarget "Torrent" */;
+			buildPhases = (
+				35FDEE5A19859AE300C37951 /* Sources */,
+				35FDEE5B19859AE300C37951 /* Frameworks */,
+				35FDEE5C19859AE300C37951 /* Headers */,
+				35FDEE5D19859AE300C37951 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Torrent;
+			productName = Torrent;
+			productReference = 35FDEE5F19859AE300C37951 /* Torrent.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		35FDEE6919859AE300C37951 /* TorrentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35FDEE7819859AE300C37951 /* Build configuration list for PBXNativeTarget "TorrentTests" */;
+			buildPhases = (
+				35FDEE6619859AE300C37951 /* Sources */,
+				35FDEE6719859AE300C37951 /* Frameworks */,
+				35FDEE6819859AE300C37951 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35FDEE6D19859AE300C37951 /* PBXTargetDependency */,
+			);
+			name = TorrentTests;
+			productName = TorrentTests;
+			productReference = 35FDEE6A19859AE300C37951 /* TorrentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35FDEE5619859AE300C37951 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = OOB;
+				TargetAttributes = {
+					35FDEE5E19859AE300C37951 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					35FDEE6919859AE300C37951 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 35FDEE5E19859AE300C37951;
+					};
+				};
+			};
+			buildConfigurationList = 35FDEE5919859AE300C37951 /* Build configuration list for PBXProject "Torrent" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 35FDEE5519859AE300C37951;
+			productRefGroup = 35FDEE6019859AE300C37951 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35FDEE5E19859AE300C37951 /* Torrent */,
+				35FDEE6919859AE300C37951 /* TorrentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		35FDEE5D19859AE300C37951 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35FDEE6819859AE300C37951 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35FDEE5A19859AE300C37951 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35FDEE6619859AE300C37951 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35FDEE7219859AE300C37951 /* TorrentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		35FDEE6D19859AE300C37951 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35FDEE5E19859AE300C37951 /* Torrent */;
+			targetProxy = 35FDEE6C19859AE300C37951 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		35FDEE7319859AE300C37951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		35FDEE7419859AE300C37951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		35FDEE7619859AE300C37951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Torrent/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		35FDEE7719859AE300C37951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Torrent/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		35FDEE7919859AE300C37951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TorrentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		35FDEE7A19859AE300C37951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TorrentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35FDEE5919859AE300C37951 /* Build configuration list for PBXProject "Torrent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35FDEE7319859AE300C37951 /* Debug */,
+				35FDEE7419859AE300C37951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35FDEE7519859AE300C37951 /* Build configuration list for PBXNativeTarget "Torrent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35FDEE7619859AE300C37951 /* Debug */,
+				35FDEE7719859AE300C37951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		35FDEE7819859AE300C37951 /* Build configuration list for PBXNativeTarget "TorrentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35FDEE7919859AE300C37951 /* Debug */,
+				35FDEE7A19859AE300C37951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35FDEE5619859AE300C37951 /* Project object */;
+}
