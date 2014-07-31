@@ -7,50 +7,61 @@
 
 import Foundation
 
-public protocol Bencodable {
-  func bencode() -> NSData
-}
-
-extension String : Bencodable {
-  public func bencode() -> NSData {
-    let data = NSMutableData()
-    let str = "\(self.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)):"
-    data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
-    data.appendData(self.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
-    return data
+func decideToBencode(item : AnyObject) -> NSData? {
+  if let bencodableData = item as? String {
+    return bencode(bencodableData)
+  } else if let bencodableData = item as? Int {
+    return bencode(bencodableData)
+  } else if let bencodableData = item as? Array<AnyObject> {
+    return bencode(bencodableData)
+  } else if let bencodableData = item as? Dictionary<String, AnyObject> {
+    return bencode(bencodableData)
   }
+  return nil
 }
 
-extension Int : Bencodable {
-  public func bencode() -> NSData {
-    let data = NSMutableData()
-    let str = "i\(String(self))e"
-    data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
-    return data
-  }
-}
-
-public func bencode(arr : Array<Bencodable>) -> NSData {
+public func bencode(s : String) -> NSData {
   let data = NSMutableData()
+  let str = "\(s.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)):"
+  data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+  data.appendData(s.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+  return data
+}
+
+public func bencode(i : Int) -> NSData {
+  let data = NSMutableData()
+  let str = "i\(String(i))e"
+  data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+  return data
+}
+
+public func bencode(arr : [AnyObject]) -> NSData {
+  let data = NSMutableData()
+  let s : Array<AnyObject> = []
   data.appendData("l".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
   for item in arr {
-    data.appendData(item.bencode())
+    if let bencodedData = decideToBencode(item) {
+      data.appendData(bencodedData)
+    }
   }
   data.appendData("e".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
   return data
 }
 
-public func bencode(dict : Dictionary<String, Bencodable>) -> NSData {
-  let data = NSMutableData()
-  data.appendData("d".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+public func bencode(dict : [String:AnyObject]) -> NSData {
+    let data = NSMutableData()
+    data.appendData("d".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
 
-  let sortedKeys = sorted(Array(dict.keys))
-  for key in sortedKeys {
-    data.appendData(key.bencode())
-    let item = dict[key]
-    data.appendData(item!.bencode())
-  }
+    let sortedKeys = sorted(Array(dict.keys))
+    for key in sortedKeys {
+      data.appendData(bencode(key))
+      if let value: AnyObject = dict[key] {
+        if let bencodedData = decideToBencode(value) {
+          data.appendData(bencodedData)
+        }
+      }
+    }
 
-  data.appendData("e".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
-  return data
+    data.appendData("e".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+    return data
 }

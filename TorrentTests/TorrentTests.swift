@@ -24,7 +24,7 @@ class TorrentTests: XCTestCase {
 
   func testBencodeString() {
     let str = "spam"
-    let bencodedData = str.bencode()
+    let bencodedData = bencode(str)
     let bstr = "4:spam"
     let expectedData = bstr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
     XCTAssertEqual(bencodedData, expectedData!, "Expected bencode data")
@@ -32,7 +32,7 @@ class TorrentTests: XCTestCase {
 
   func testBencodeInt() {
     let x = 1234
-    let bencodedData = x.bencode()
+    let bencodedData = bencode(x)
     let bstr = "i1234e"
     let expectedData = bstr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
     XCTAssertEqual(bencodedData, expectedData!)
@@ -40,33 +40,58 @@ class TorrentTests: XCTestCase {
 
   func testBencodeNegativeInt() {
     let x = -1234
-    let bencodedData = x.bencode()
+    let bencodedData = bencode(x)
     let bstr = "i-1234e"
     let expectedData = bstr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
     XCTAssertEqual(bencodedData, expectedData!)
   }
 
-  func testBencodeArray() {
-    let arr: [Bencodable] = ["spam", "eggs"]
+  func testBencodeStringArray() {
+    let arr: [String] = ["spam", "eggs"]
     let bencodedData = bencode(arr)
     let bstr = "l4:spam4:eggse"
     let expectedData = bstr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
     XCTAssertEqual(bencodedData, expectedData!)
   }
 
-  func testBencodeMixedArray() {
-    let arr: [Bencodable] = ["spam", "eggs", 1234]
+  func testBencodeIntArray() {
+    let arr: [Int] = [1234, 5678]
     let bencodedData = bencode(arr)
-    let bstr = "l4:spam4:eggsi1234ee"
+    let bstr = "li1234ei5678ee"
+    let expectedData = bstr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+    XCTAssertEqual(bencodedData, expectedData!)
+  }
+
+  func testBencodeMixedArray() {
+    let arr = [1234, 5678, "spam"]
+    let bencodedData = bencode(arr)
+    let bstr = "li1234ei5678e4:spame"
     let expectedData = bstr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
     XCTAssertEqual(bencodedData, expectedData!)
   }
 
   func testBencodeDictionary() {
-    let dict: [String:Bencodable] = ["spam" : "eggs", "abcd" : "efg", "xyz" : 1234]
+    let dict: [String:AnyObject] = ["spam" : "eggs", "abcd" : "efg", "xyz" : 1234]
     let bencodedData = bencode(dict)
     let bstr = "d4:abcd3:efg4:spam4:eggs3:xyzi1234ee"
     let expectedData = bstr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
     XCTAssertEqual(bencodedData, expectedData!)
   }
+
+  func testBencodeStringDictionary() {
+    let dict: [String:String] = ["spam" : "eggs", "abcd" : "efg"]
+    let bencodedData = bencode(dict)
+    let bstr = "d4:abcd3:efg4:spam4:eggse"
+    let expectedData = bstr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+    XCTAssertEqual(bencodedData, expectedData!)
+  }
+
+  func testBencodeInnerDictionary() {
+    let dict: [String:AnyObject] = ["spam" : "eggs", "abcd" : "efg", "inner" : ["a" : [1, 2, 3]]]
+    let bencodedData = bencode(dict)
+    let bstr = "d4:abcd3:efg5:innerd1:ali1ei2ei3eee4:spam4:eggse"
+    let expectedData = bstr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+    XCTAssertEqual(bencodedData, expectedData!)
+  }
+
 }
