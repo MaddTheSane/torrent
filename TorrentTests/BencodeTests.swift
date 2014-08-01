@@ -1,6 +1,6 @@
 //
-//  TorrentTests.swift
-//  TorrentTests
+//  BencodeTests.swift
+//  Torrent
 //
 //  Copyright (c) 2014 Bryant Luk. All rights reserved.
 //
@@ -10,7 +10,7 @@ import XCTest
 
 import Torrent
 
-class TorrentTests: XCTestCase {
+class BencodeTests: XCTestCase {
     
   override func setUp() {
       super.setUp()

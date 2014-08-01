@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		35FDEE6519859AE300C37951 /* Torrent.h in Headers */ = {isa = PBXBuildFile; fileRef = 35FDEE6419859AE300C37951 /* Torrent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35FDEE6B19859AE300C37951 /* Torrent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FDEE5F19859AE300C37951 /* Torrent.framework */; };
-		35FDEE7219859AE300C37951 /* TorrentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE7119859AE300C37951 /* TorrentTests.swift */; };
+		35FDEE7219859AE300C37951 /* BencodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE7119859AE300C37951 /* BencodeTests.swift */; };
 		35FDEE7C19859F0B00C37951 /* Bencode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE7B19859F0B00C37951 /* Bencode.swift */; };
 		35FDEE881985D04600C37951 /* Bdecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE871985D04600C37951 /* Bdecode.swift */; };
 		35FDEE8A1985EBB600C37951 /* BdecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE891985EBB600C37951 /* BdecodeTests.swift */; };
@@ -66,7 +66,7 @@
 		35FDEE6419859AE300C37951 /* Torrent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Torrent.h; sourceTree = "<group>"; };
 		35FDEE6A19859AE300C37951 /* TorrentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TorrentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35FDEE7019859AE300C37951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		35FDEE7119859AE300C37951 /* TorrentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentTests.swift; sourceTree = "<group>"; };
+		35FDEE7119859AE300C37951 /* BencodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BencodeTests.swift; sourceTree = "<group>"; };
 		35FDEE7B19859F0B00C37951 /* Bencode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bencode.swift; sourceTree = "<group>"; };
 		35FDEE871985D04600C37951 /* Bdecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bdecode.swift; sourceTree = "<group>"; };
 		35FDEE891985EBB600C37951 /* BdecodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BdecodeTests.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		35FDEE6E19859AE300C37951 /* TorrentTests */ = {
 			isa = PBXGroup;
 			children = (
-				35FDEE7119859AE300C37951 /* TorrentTests.swift */,
+				35FDEE7119859AE300C37951 /* BencodeTests.swift */,
 				35FDEE891985EBB600C37951 /* BdecodeTests.swift */,
 				35FDEE6F19859AE300C37951 /* Supporting Files */,
 			);
@@ -269,7 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35FDEE8A1985EBB600C37951 /* BdecodeTests.swift in Sources */,
-				35FDEE7219859AE300C37951 /* TorrentTests.swift in Sources */,
+				35FDEE7219859AE300C37951 /* BencodeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +478,7 @@
 				35FDEE7719859AE300C37951 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35FDEE7819859AE300C37951 /* Build configuration list for PBXNativeTarget "TorrentTests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +487,7 @@
 				35FDEE7A19859AE300C37951 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
