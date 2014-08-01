@@ -11,6 +11,8 @@
 		35FDEE6B19859AE300C37951 /* Torrent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FDEE5F19859AE300C37951 /* Torrent.framework */; };
 		35FDEE7219859AE300C37951 /* TorrentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE7119859AE300C37951 /* TorrentTests.swift */; };
 		35FDEE7C19859F0B00C37951 /* Bencode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE7B19859F0B00C37951 /* Bencode.swift */; };
+		35FDEE881985D04600C37951 /* Bdecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE871985D04600C37951 /* Bdecode.swift */; };
+		35FDEE8A1985EBB600C37951 /* BdecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FDEE891985EBB600C37951 /* BdecodeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,34 @@
 			remoteGlobalIDString = 35FDEE5E19859AE300C37951;
 			remoteInfo = Torrent;
 		};
+		35FDEE7F1985A9F800C37951 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35FDEE5619859AE300C37951 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35FDEE5E19859AE300C37951;
+			remoteInfo = Torrent;
+		};
+		35FDEE811985A9FD00C37951 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35FDEE5619859AE300C37951 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35FDEE5E19859AE300C37951;
+			remoteInfo = Torrent;
+		};
+		35FDEE831985AA0100C37951 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35FDEE5619859AE300C37951 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35FDEE5E19859AE300C37951;
+			remoteInfo = Torrent;
+		};
+		35FDEE851985AA0E00C37951 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35FDEE5619859AE300C37951 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 35FDEE5E19859AE300C37951;
+			remoteInfo = Torrent;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +68,8 @@
 		35FDEE7019859AE300C37951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35FDEE7119859AE300C37951 /* TorrentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentTests.swift; sourceTree = "<group>"; };
 		35FDEE7B19859F0B00C37951 /* Bencode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bencode.swift; sourceTree = "<group>"; };
+		35FDEE871985D04600C37951 /* Bdecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bdecode.swift; sourceTree = "<group>"; };
+		35FDEE891985EBB600C37951 /* BdecodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BdecodeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +115,7 @@
 				35FDEE6419859AE300C37951 /* Torrent.h */,
 				35FDEE6219859AE300C37951 /* Supporting Files */,
 				35FDEE7B19859F0B00C37951 /* Bencode.swift */,
+				35FDEE871985D04600C37951 /* Bdecode.swift */,
 			);
 			path = Torrent;
 			sourceTree = "<group>";
@@ -99,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				35FDEE7119859AE300C37951 /* TorrentTests.swift */,
+				35FDEE891985EBB600C37951 /* BdecodeTests.swift */,
 				35FDEE6F19859AE300C37951 /* Supporting Files */,
 			);
 			path = TorrentTests;
@@ -157,6 +191,10 @@
 			dependencies = (
 				35FDEE6D19859AE300C37951 /* PBXTargetDependency */,
 				35FDEE7E1985A9F800C37951 /* PBXTargetDependency */,
+				35FDEE801985A9F800C37951 /* PBXTargetDependency */,
+				35FDEE821985A9FD00C37951 /* PBXTargetDependency */,
+				35FDEE841985AA0100C37951 /* PBXTargetDependency */,
+				35FDEE861985AA0E00C37951 /* PBXTargetDependency */,
 			);
 			name = TorrentTests;
 			productName = TorrentTests;
@@ -221,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35FDEE881985D04600C37951 /* Bdecode.swift in Sources */,
 				35FDEE7C19859F0B00C37951 /* Bencode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35FDEE8A1985EBB600C37951 /* BdecodeTests.swift in Sources */,
 				35FDEE7219859AE300C37951 /* TorrentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +285,26 @@
 			isa = PBXTargetDependency;
 			target = 35FDEE5E19859AE300C37951 /* Torrent */;
 			targetProxy = 35FDEE7D1985A9F800C37951 /* PBXContainerItemProxy */;
+		};
+		35FDEE801985A9F800C37951 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35FDEE5E19859AE300C37951 /* Torrent */;
+			targetProxy = 35FDEE7F1985A9F800C37951 /* PBXContainerItemProxy */;
+		};
+		35FDEE821985A9FD00C37951 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35FDEE5E19859AE300C37951 /* Torrent */;
+			targetProxy = 35FDEE811985A9FD00C37951 /* PBXContainerItemProxy */;
+		};
+		35FDEE841985AA0100C37951 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35FDEE5E19859AE300C37951 /* Torrent */;
+			targetProxy = 35FDEE831985AA0100C37951 /* PBXContainerItemProxy */;
+		};
+		35FDEE861985AA0E00C37951 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 35FDEE5E19859AE300C37951 /* Torrent */;
+			targetProxy = 35FDEE851985AA0E00C37951 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
