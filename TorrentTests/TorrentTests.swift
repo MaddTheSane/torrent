@@ -30,6 +30,14 @@ class TorrentTests: XCTestCase {
     XCTAssertEqual(bencodedData, expectedData!, "Expected bencode data")
   }
 
+  func testBencodeNSData() {
+    let data : NSData = "spam".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+    let bencodedData = bencode(data)
+    let bstr = "4:spam"
+    let expectedData = bstr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+    XCTAssertEqual(bencodedData, expectedData!, "Expected bencode data")
+  }
+
   func testBencodeInt() {
     let x = 1234
     let bencodedData = bencode(x)

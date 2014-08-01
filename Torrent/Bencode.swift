@@ -10,6 +10,8 @@ import Foundation
 func decideToBencode(item : AnyObject) -> NSData? {
   if let bencodableData = item as? String {
     return bencode(bencodableData)
+  } else if let bencodableData = item as? NSData {
+    return bencode(bencodableData)
   } else if let bencodableData = item as? Int {
     return bencode(bencodableData)
   } else if let bencodableData = item as? Array<AnyObject> {
@@ -25,6 +27,14 @@ public func bencode(s : String) -> NSData {
   let str = "\(s.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)):"
   data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
   data.appendData(s.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+  return data
+}
+
+public func bencode(d : NSData) -> NSData {
+  let data = NSMutableData()
+  let str = "\(d.length):"
+  data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+  data.appendData(d)
   return data
 }
 
