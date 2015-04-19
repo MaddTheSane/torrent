@@ -31,7 +31,7 @@ class BencodeTests: XCTestCase {
   }
 
   func testBencodeNSData() {
-    let data : NSData = "spam".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+    let data : NSData = "spam".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
     let bencodedData = bencode(data)
     let bstr = "4:spam"
     let expectedData = bstr.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)

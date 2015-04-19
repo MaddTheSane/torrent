@@ -98,7 +98,9 @@
 				35FDEE6E19859AE300C37951 /* TorrentTests */,
 				35FDEE6019859AE300C37951 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		35FDEE6019859AE300C37951 /* Products */ = {
 			isa = PBXGroup;

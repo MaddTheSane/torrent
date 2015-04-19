@@ -7,8 +7,8 @@
 
 import Foundation
 
-let eData = "e".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-let colonData = ":".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+let eData = "e".dataUsingEncoding(NSUTF8StringEncoding)!
+let colonData = ":".dataUsingEncoding(NSUTF8StringEncoding)!
 
 public func bdecode(data : NSData, offset : Int = 0) -> (value: AnyObject?, offset: Int) {
   if (data.length < offset) {
@@ -36,9 +36,9 @@ public func bdecode(data : NSData, offset : Int = 0) -> (value: AnyObject?, offs
 
 func decodeInt(data : NSData, offset : Int = 0) -> (value: Int?, offset: Int) {
   let rangeAfterOffset = NSRange(location: offset, length: data.length - offset)
-  let endRange = data.rangeOfData(eData, options: NSDataSearchOptions.fromRaw(0)!, range: rangeAfterOffset)
+  let endRange = data.rangeOfData(eData, options: nil, range: rangeAfterOffset)
   let numData = data.subdataWithRange(NSRange(location: offset + 1, length:(endRange.location - offset)))
-  let numStr = NSString(data: numData, encoding:NSUTF8StringEncoding)
+  let numStr = NSString(data: numData, encoding:NSUTF8StringEncoding) as! String
   let scanner = NSScanner(string: numStr)
   var value = 0
   let scanned = scanner.scanInteger(&value)
@@ -53,9 +53,9 @@ func decodeInt(data : NSData, offset : Int = 0) -> (value: Int?, offset: Int) {
 
 func decodeString(data : NSData, offset : Int = 0) -> (value: NSData?, offset: Int)  {
   let rangeAfterOffset = NSRange(location: offset, length: data.length - offset)
-  let endRange = data.rangeOfData(colonData, options: NSDataSearchOptions.fromRaw(0)!, range: rangeAfterOffset)
+  let endRange = data.rangeOfData(colonData, options: nil, range: rangeAfterOffset)
   let numData = data.subdataWithRange(NSRange(location: offset, length:(endRange.location - offset)))
-  let numStr = NSString(data: numData, encoding:NSUTF8StringEncoding)
+  let numStr = NSString(data: numData, encoding:NSUTF8StringEncoding) as! String
   let scanner = NSScanner(string: numStr)
   var value = 0
   let scanned = scanner.scanInteger(&value)
@@ -76,8 +76,8 @@ func decodeArray(data : NSData, offset : Int = 0) -> (value: [AnyObject]?, offse
   
   var (decodedObj : AnyObject?, newOffset: Int) = bdecode(data, offset: offset + 1)
   while let actualObj: AnyObject = decodedObj {
-    arr += actualObj
-    
+    arr.append(actualObj)
+	
     if nextCharacter(data, newOffset) == "e" {
       break
     }
@@ -104,7 +104,7 @@ func decodeDict(data : NSData, offset : Int = 0) -> (value: [String:AnyObject]?,
     if let key = actualObj as? NSData {
       (decodedObj, newOffset) = bdecode(data, offset: newOffset)
       if let value : AnyObject = decodedObj {
-        let keyStr = String(NSString(data: key, encoding: NSUTF8StringEncoding))
+        let keyStr = NSString(data: key, encoding: NSUTF8StringEncoding) as! String
         dict[keyStr] = value
         
         if nextCharacter(data, newOffset) == "e" {
@@ -127,11 +127,11 @@ func decodeDict(data : NSData, offset : Int = 0) -> (value: [String:AnyObject]?,
   return (dict, newOffset + 1)
 }
 
-func nextCharacter(data: NSData, offset: Int) -> String? {
+private func nextCharacter(data: NSData, offset: Int) -> String? {
   if (data.length < offset + 1) {
     return nil
   }
   
   let nextSubdata = data.subdataWithRange(NSRange(location: offset, length: 1))
-  return String(NSString(data: nextSubdata, encoding:NSUTF8StringEncoding))
+  return NSString(data: nextSubdata, encoding:NSUTF8StringEncoding) as? String
 }

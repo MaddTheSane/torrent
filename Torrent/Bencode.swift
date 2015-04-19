@@ -25,15 +25,15 @@ func decideToBencode(item : AnyObject) -> NSData? {
 public func bencode(s : String) -> NSData {
   let data = NSMutableData()
   let str = "\(s.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)):"
-  data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
-  data.appendData(s.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+  data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
+  data.appendData(s.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
   return data
 }
 
 public func bencode(d : NSData) -> NSData {
   let data = NSMutableData()
   let str = "\(d.length):"
-  data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+  data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
   data.appendData(d)
   return data
 }
@@ -41,26 +41,26 @@ public func bencode(d : NSData) -> NSData {
 public func bencode(i : Int) -> NSData {
   let data = NSMutableData()
   let str = "i\(String(i))e"
-  data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+  data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
   return data
 }
 
 public func bencode(arr : [AnyObject]) -> NSData {
   let data = NSMutableData()
   let s : Array<AnyObject> = []
-  data.appendData("l".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+  data.appendData("l".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
   for item in arr {
     if let bencodedData = decideToBencode(item) {
       data.appendData(bencodedData)
     }
   }
-  data.appendData("e".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+  data.appendData("e".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
   return data
 }
 
 public func bencode(dict : [String:AnyObject]) -> NSData {
     let data = NSMutableData()
-    data.appendData("d".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+    data.appendData("d".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
 
     let sortedKeys = sorted(Array(dict.keys))
     for key in sortedKeys {
@@ -72,6 +72,6 @@ public func bencode(dict : [String:AnyObject]) -> NSData {
       }
     }
 
-    data.appendData("e".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false))
+    data.appendData("e".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
     return data
 }
