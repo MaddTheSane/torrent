@@ -38,15 +38,16 @@ func decodeInt(data : NSData, offset : Int = 0) -> (value: Int?, offset: Int) {
   let rangeAfterOffset = NSRange(location: offset, length: data.length - offset)
   let endRange = data.rangeOfData(eData, options: nil, range: rangeAfterOffset)
   let numData = data.subdataWithRange(NSRange(location: offset + 1, length:(endRange.location - offset)))
-  let numStr = NSString(data: numData, encoding:NSUTF8StringEncoding) as! String
-  let scanner = NSScanner(string: numStr)
-  var value = 0
-  let scanned = scanner.scanInteger(&value)
-  if scanned {
-    if nextCharacter(data, endRange.location) != "e" {
-      return (nil, offset)
+  if let numStr = NSString(data: numData, encoding:NSUTF8StringEncoding) as? String {
+    let scanner = NSScanner(string: numStr)
+    var value = 0
+    let scanned = scanner.scanInteger(&value)
+    if scanned {
+      if nextCharacter(data, endRange.location) != "e" {
+        return (nil, offset)
+      }
+      return (value, endRange.location + 1)
     }
-    return (value, endRange.location + 1)
   }
   return (nil, offset)
 }
@@ -55,13 +56,14 @@ func decodeString(data : NSData, offset : Int = 0) -> (value: NSData?, offset: I
   let rangeAfterOffset = NSRange(location: offset, length: data.length - offset)
   let endRange = data.rangeOfData(colonData, options: nil, range: rangeAfterOffset)
   let numData = data.subdataWithRange(NSRange(location: offset, length:(endRange.location - offset)))
-  let numStr = NSString(data: numData, encoding:NSUTF8StringEncoding) as! String
-  let scanner = NSScanner(string: numStr)
-  var value = 0
-  let scanned = scanner.scanInteger(&value)
-  
-  if scanned {
-    return (data.subdataWithRange(NSRange(location: endRange.location + 1, length: value)), endRange.location + 1 + value)
+  if let numStr = NSString(data: numData, encoding:NSUTF8StringEncoding) as? String {
+    let scanner = NSScanner(string: numStr)
+    var value = 0
+    let scanned = scanner.scanInteger(&value)
+    
+    if scanned {
+      return (data.subdataWithRange(NSRange(location: endRange.location + 1, length: value)), endRange.location + 1 + value)
+    }
   }
   
   return (nil, offset)
@@ -104,8 +106,9 @@ func decodeDict(data : NSData, offset : Int = 0) -> (value: [String:AnyObject]?,
     if let key = actualObj as? NSData {
       (decodedObj, newOffset) = bdecode(data, offset: newOffset)
       if let value : AnyObject = decodedObj {
-        let keyStr = NSString(data: key, encoding: NSUTF8StringEncoding) as! String
-        dict[keyStr] = value
+        if let keyStr = NSString(data: key, encoding: NSUTF8StringEncoding) as? String {
+          dict[keyStr] = value
+        }
         
         if nextCharacter(data, newOffset) == "e" {
           break
