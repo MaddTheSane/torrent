@@ -27,7 +27,7 @@ public func bencode(s : String) -> NSData {
   let str = "\(s.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)):"
   data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
   data.appendData(s.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
-  return data
+  return NSData(data: data)
 }
 
 public func bencode(d : NSData) -> NSData {
@@ -35,14 +35,14 @@ public func bencode(d : NSData) -> NSData {
   let str = "\(d.length):"
   data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
   data.appendData(d)
-  return data
+  return NSData(data: data)
 }
 
 public func bencode(i : Int) -> NSData {
   let data = NSMutableData()
   let str = "i\(String(i))e"
   data.appendData(str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
-  return data
+  return NSData(data: data)
 }
 
 public func bencode(arr : [AnyObject]) -> NSData {
@@ -55,7 +55,7 @@ public func bencode(arr : [AnyObject]) -> NSData {
     }
   }
   data.appendData("e".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
-  return data
+  return NSData(data: data)
 }
 
 public func bencode(dict : [String:AnyObject]) -> NSData {
@@ -73,5 +73,5 @@ public func bencode(dict : [String:AnyObject]) -> NSData {
     }
 
     data.appendData("e".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!)
-    return data
+  return NSData(data: data)
 }
